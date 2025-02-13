@@ -1,0 +1,348 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+        background: #ffb804e3; /* Sarımsı ton */
+        color: white;
+        padding: 15px 30px;
+        font-size: 21px;
+        font-weight: bold;
+        text-align: center;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+        display: flex;
+        justify-content: center; /* Header'ı ortala */
+        align-items: center;
+    }
+
+    header .logo {
+    font-size: 24px; /* Daha uygun bir font boyutu */
+    font-weight: 600; /* Daha belirgin bir ağırlık */
+    letter-spacing: 1px;
+    margin-right: 20px; /* Logo ve navigasyon arasında boşluk */
+}
+header .logo img {
+    width: 50px; /* Logonun genişliğini ayarlayın */
+    height: auto; /* Yüksekliği oranlı olarak otomatik ayarlansın */
+}
+
+
+    header nav {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    header nav a {
+        color: white;
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: 500;
+        transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    header nav a:hover {
+        color: #333;
+        transform: scale(1.1);
+    }
+
+    @media (max-width: 768px) {
+        header {
+            padding: 15px 20px;
+            flex-direction: column;
+        }
+
+        header nav {
+            justify-content: center;
+            width: 100%;
+        }
+
+        header nav a {
+            margin: 5px 0;
+        }
+    }
+
+        main {
+            margin-top: 120px;
+        }
+        section {
+            margin: 40px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            width: 80%;
+            max-width: 900px;
+            text-align: center;
+        }
+        h2 {
+            color: #d4a017;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        .vehicle-gallery {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .vehicle-gallery img {
+            width: 280px;
+            margin: 10px;
+            border-radius: 8px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .vehicle-gallery img:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        .owner img {
+            width: 180px;
+            border-radius: 50%;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        .reviews {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .review {
+            background: #f8f8f8;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 500px;
+            margin: 10px;
+            text-align: center;
+        }
+        .stars {
+            color: #d4a017;
+            margin-bottom: 10px;
+        }
+        .star {
+            font-size: 20px;
+            margin: 0 2px;
+        }
+        .contact-info {
+            font-size: 18px;
+            font-weight: 500;
+            color: #444;
+        }
+        .contact-info p {
+            margin: 8px 0;
+        }
+        footer {
+            background: #222;
+            color: white;
+            padding: 15px;
+            font-size: 14px;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .vehicle-gallery img {
+    width: 280px;
+    margin: 10px;
+    border-radius: 8px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer; /* Tıklanabilir olduğunu göstermek için */
+}
+
+.vehicle-gallery img.active {
+    transform: scale(1.5); /* Resmi biraz büyütüyoruz */
+    z-index: 10; /* Üstte görünmesini sağlar */
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease-in-out;
+}
+footer p {
+    font-size: 14px;
+    color: white;
+}
+
+footer p strong {
+    font-weight: bold;
+    color: #d4a017; /* Sarımsı renk */
+}
+
+.social-media {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-media .social-icon img {
+    width: 60px;  /* İkonların genişliğini küçültüyoruz */
+    height: auto; /* Yükseklik oranlı olarak otomatik ayarlandığı için */
+    transition: transform 0.3s ease;
+}
+
+.social-media .social-icon img:hover {
+    transform: scale(1.1); /* Hover efektiyle biraz büyütme */
+}
+.contact-header {
+    font-size: 24px;  /* Font büyüklüğünü arttırdık */
+    font-weight: bold;  /* Metni kalın yaptık */
+    text-align: center;  /* Ortaladık */
+    color: #333;  /* Metin rengini koyu gri yaptık */
+    margin-bottom: 20px;  /* Alt boşluk ekledik */
+    text-transform: uppercase;  /* Yazıyı büyük harfe dönüştürdük */
+    letter-spacing: 1px;  /* Harfler arasına boşluk ekledik */
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="https://i.hizliresim.com/8cg6oew.png">      
+        </div>
+        <nav>
+            <a href="#about">Hakkımızda</a>
+            <a href="#vehicles">Araçlarımız</a>
+            <a href="#owner">Firma Sahibi</a>
+            <a href="#reviews">Yorumlar</a>
+            <a href="#contact">İletişim</a>
+        </nav>
+    </header>
+    
+
+    <main>
+        <section id="about">
+            <h2>Hakkımızda</h2>
+            <p>İstanbul içi güvenli, konforlu ve zamanında personel taşımacılığı hizmeti sunuyoruz. Müşterilerimizin ihtiyaçlarına 
+            göre özelleştirilmiş taşıma çözümleri ile hem çalışanlarınızın güvenliğini sağlıyor hem de konforlu bir seyahat deneyimi sunuyoruz. 
+            Son model araçlarımız, deneyimli sürücülerimiz ve müşteri memnuniyeti odaklı yaklaşımımızla, 
+            her zaman kaliteli ve güvenilir hizmet vermekten gurur duyuyoruz.</p>
+
+        </section>
+
+        <section id="vehicles">
+            <h2>Araçlarımız</h2>
+            <div class="vehicle-gallery">
+                <img src="https://i.hizliresim.com/kxgqtxd.jpg" alt="Araç 1">
+                <img src="https://i.hizliresim.com/oyx585y.jpg" alt="Araç 2">
+                <img src="https://i.hizliresim.com/9odkdem.jpg" alt="Araç 3">
+                <img src="https://i.hizliresim.com/aga7xaf.jpg" alt="Araç 3">
+            </div>
+        </section>
+
+        <section id="owner" class="owner">
+            <h2>Firma Sahibi</h2>
+            <img src="https://i.hizliresim.com/qg60sga.png" alt="Hürkan Coşkun">
+            <p><strong>Hürkan Coşkun</strong></p>
+            <br>
+            <p>"10 yıldır güzel yüzümüzle personel taşımacılığını son model araçlarla ve kurumsal bir anlayışla sağlamaktan büyük memnuniyet ve mutluluk duyuyoruz. Müşterilerimize her zaman en kaliteli hizmeti sunmayı hedefliyoruz."</p>
+            <BR></BR>
+            <p class="contact-header">İLETİŞİM HESAPLARI</p>
+
+            <!-- Social Media Links -->
+            <div class="social-media">
+                <a href="https://www.instagram.com/hrkncskn/" target="_blank" class="social-icon instagram">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/1024px-Instagram_icon.png" alt="Instagram">
+                </a>
+                <a href="https://wa.me/+905526017836" target="_blank" class="social-icon whatsapp">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/2044px-WhatsApp.svg.png" alt="WhatsApp">
+                </a>
+                <a href="https://www.facebook.com/hurkan25" target="_blank" class="social-icon facebook">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/1024px-Facebook_f_logo_%282019%29.svg.png" alt="Facebook">
+                </a>
+            </div>
+        </section>
+        
+
+        <section id="reviews" class="reviews">
+            <h2>Çalışılan Firmaların Yorumları</h2>
+            <div class="review">
+                <p><strong>ABC Şirketi:</strong></p>
+                <div class="stars">
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                </div>
+                <p>"Hizmetlerinden çok memnun kaldık. İşçi taşımacılığında güvenilir bir firma!"</p>
+            </div>
+            <div class="review">
+                <p><strong>XYZ Fabrikası:</strong></p>
+                <div class="stars">
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                </div>
+                <p>"Düzenli ve zamanında taşımacılık hizmeti sağlıyorlar. Kesinlikle tavsiye ederiz."</p>
+            </div>
+            <div class="review">
+                <p><strong>DEF Holding:</strong></p>
+                <div class="stars">
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                </div>
+                <p>"Personelimizin ulaşımı konusunda sorunsuz hizmet aldık. Teşekkürler!"</p>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>İletişim</h2>
+            <div class="contact-info">
+                <p>📞 Telefon: +90 552 601 78 36</p>
+                <p>📧 Email: <a href="mailto:info@hurkancoskun.com">info@hurkancoskun.com</a></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Tüm Hakları Saklıdır. | Tasarımcı: Fırat Engin</p>
+    </footer>
+    
+    
+</body>
+<script>
+    const vehicleImages = document.querySelectorAll('.vehicle-gallery img');
+
+    vehicleImages.forEach(image => {
+        image.addEventListener('click', (event) => {
+            // Eğer aktif olan resme tıklanıyorsa, onu küçült
+            if (image.classList.contains('active')) {
+                image.classList.remove('active');
+            } else {
+                // Diğer resimlerden 'active' sınıfını kaldır
+                vehicleImages.forEach(img => img.classList.remove('active'));
+                // Tıklanan resme 'active' sınıfını ekle
+                image.classList.add('active');
+            }
+            // Tıklama olayını durduruyoruz, aksi takdirde dışarıya tıklandığında hemen küçülür
+            event.stopPropagation();
+        });
+    });
+
+    // Resmin dışında herhangi bir yere tıklanması durumunda resmi eski boyutuna döndür
+    window.addEventListener('click', () => {
+        vehicleImages.forEach(img => img.classList.remove('active'));
+    });
+
+    // Resim içine tıklama yapılınca, dışarıya tıklama işlemi engellenir
+    document.querySelector('.vehicle-gallery').addEventListener('click', (event) => {
+        event.stopPropagation();
+    });
+</script>
